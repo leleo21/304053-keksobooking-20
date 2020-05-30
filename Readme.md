@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Ксения Белехова](https://up.htmlacademy.ru/javascript/20/user/304053).
-* Наставник: `Неизвестно`.
+* Наставник: [Ярослав Ермилов](https://htmlacademy.ru/profile/id776985).
 
 ---
 
