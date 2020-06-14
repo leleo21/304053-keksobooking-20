@@ -25,7 +25,7 @@ var createOffer = function (location) {
   var locationY = PIN_Y_RANGE[0] + getRandomNumber(PIN_Y_RANGE[1] - PIN_Y_RANGE[0]);
   var offering = {
     author: {
-      avatar: 'img/avatars/user01' + location + '.png',
+      avatar: 'img/avatars/user0' + location + '.png',
     },
     offer: {
       title: 'Милые апартаменты',
