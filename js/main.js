@@ -16,17 +16,16 @@ var map = document.querySelector('.map');
 var pinTemplate = document.querySelector('#pin').content.querySelector('.map__pin');
 var pinsOnMap = document.querySelector('.map__pins');
 
-
 var getRandomNumber = function (number) {
   return Math.floor(Math.random() * (number + 1));
 };
 
-var createOffer = function (i) {
+var createOffer = function (location) {
   var locationX = PIN_X_RANGE[0] + getRandomNumber(PIN_X_RANGE[1] - PIN_X_RANGE[0]);
   var locationY = PIN_Y_RANGE[0] + getRandomNumber(PIN_Y_RANGE[1] - PIN_Y_RANGE[0]);
   var offering = {
     author: {
-      avatar: 'img/avatars/user00' + i + '.png',
+      avatar: 'img/avatars/user01' + location + '.png',
     },
     offer: {
       title: 'Милые апартаменты',
@@ -48,11 +47,13 @@ var createOffer = function (i) {
   };
   return offering;
 };
+
 var createOffers = function () {
   for (var j = 0; j < OFFER_QUANTITY; j++) {
     offers.push(createOffer(j + 1));
   }
 };
+
 var renderPin = function (offering) {
   var pinElement = pinTemplate.cloneNode(true);
   pinElement.style = 'left: ' + (offering.location.x + PIN_X_OFFSET) + 'px; top: ' + (offering.location.y + PIN_Y_OFFSET) + 'px';
@@ -60,6 +61,7 @@ var renderPin = function (offering) {
   pinElement.querySelector('img').alt = offering.offer.title;
   return pinElement;
 };
+
 var renderPins = function () {
   var fragment = document.createDocumentFragment();
   for (var i = 0; i < offers.length; i++) {
