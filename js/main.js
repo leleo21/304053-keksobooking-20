@@ -77,7 +77,7 @@ var renderOffer = function (offering) {
   offerElement.querySelector('.popup__text--address').textContent = offering.offer.address;
 
   if (offering.offer.price) {
-    offerElement.querySelector('.popup__text--price').innerHTML = ' &#x20bd;<span>/ночь</span>';
+    offerElement.querySelector('.popup__text--price').textContent = ' ₽/ночь';
     offerElement.querySelector('.popup__text--price').prepend(offering.offer.price);
   } else {
     offerElement.querySelector('.popup__text--price').innerHTML = '';
